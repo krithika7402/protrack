@@ -1,0 +1,42 @@
+.upgrade-card {
+    position: relative;
+    background: linear-gradient(180deg, #FD71AF 0%, #FEC6DF 100%);
+    border-radius: 24px;
+    padding: 16px 4px;
+    text-align: center;
+    color: white;
+    margin: 84px 4px;
+}
+
+.upgrade-circle {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #FD71AF 0%, #FEC6DF 100%);
+    border: white 4px solid;
+}
+
+.pro-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.pro-header {
+    margin-top: 48px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.pro-paragraph {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+}

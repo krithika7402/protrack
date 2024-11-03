@@ -1,0 +1,202 @@
+.home-welcome {
+  width: 100%;
+}
+
+.home-welcome span {
+  color: #666;
+  font-size: 0.875rem; /* 14px */
+  display: block;
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+.home-welcome h1 {
+  font-size: 2rem; /* 32px */
+  color: #56555c;
+  font-weight: 500;
+  margin: 0;
+}
+
+.weekly-overview-container {
+  background: white;
+  height: 14.5rem;
+  border-radius: 0.75rem; /* 12px */
+  padding: 0.75rem 1.5rem 2rem 1.25rem; /* 12px 24px 12px 20px */
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.05); /* 0px 4px 20px */
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+  margin-bottom: 0.5rem; /* 14px */
+}
+
+.header-section h3 {
+  font-weight: 500;
+  color: #56555c;
+  margin: 0;
+  font-size: 1.125rem; /* 18px */
+}
+
+.chart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem; /* 8px */
+}
+
+.content-wrapper {
+  display: flex;
+  height: calc(100% - 2.5rem); /* 40px */
+  gap: 2.5rem; /* 40px */
+}
+
+.stats-section {
+  flex: 0 0 auto;
+  width: 8.75rem; /* 140px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.number-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.number-stats h2 {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 500;
+  line-height: 1;
+  color: #888793;
+  font-weight: 700;
+  margin: 0;
+}
+
+.percentage-increase {
+  color: #05cd99;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.triangle {
+  font-size: 1rem; /* 10px */
+  display: inline-block;
+  line-height: 1;
+}
+
+.custom-tooltip {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stats-label {
+  display: block;
+  color: #787486;
+  font-size: 14px;
+  line-height: 0;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+}
+
+.status-icon {
+  background: #05cd99;
+  color: white;
+  width: 1rem; /* 20px */
+  height: 1rem; /* 20px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem; /* 12px */
+}
+
+.status-text {
+  color: #05cd99;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.open-tasks-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+  padding: 0.5rem 1rem; /* 8px 16px */
+  border: 0.0625rem solid #4318ff; /* 1px */
+  border-radius: 0.5rem; /* 8px */
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: none;
+  color: #4318ff;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 3rem; /* 48px */
+}
+
+.chart-section {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0.45rem 1.5rem; /* 0 12px */
+  position: relative;
+}
+
+/* Add this new CSS for the chart border */
+.chart-section::before {
+  content: '';
+  position: absolute;
+  top: 0px; 
+  left: 15px;
+  right: 15px;
+  bottom: 45px; 
+  border: 1px solid #edececdd;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.custom-tooltip {
+  background: white;
+  border-radius: 0.5rem; /* 8px */
+  padding: 0.5rem 0.75rem; /* 8px 12px */
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1); /* 0px 4px 20px */
+  text-align: center;
+}
+
+.custom-tooltip div:first-child {
+  color: #ff69b4;
+  font-weight: 500;
+  font-size: 0.875rem; /* 14px */
+}
+
+.custom-tooltip div:last-child {
+  color: #87ceeb;
+  font-weight: 500;
+  font-size: 0.875rem; /* 14px */
+}
+
+.recharts-responsive-container {
+  margin-top: 1.25rem; /* 20px */
+}
+
+.recharts-cartesian-grid-horizontal line {
+  stroke: #f5f5f5;
+  stroke-width: 0;
+}
+
+.recharts-xaxis-tick text {
+  fill: #787486;
+}
+
+.footer {
+  border-top: 0.0625rem solid #f5f5f5; /* 1px */
+}
