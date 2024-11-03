@@ -1,4 +1,4 @@
-// Calendar.jsx
+import { useState } from "react";
 import "./Calendar.css";
 import { ChevronRight, Plus, Bold } from "lucide-react";
 import tag from "../../assets/tag.svg";
@@ -33,7 +33,7 @@ const Calendar = () => {
     },
   ];
 
-  const tasks = [
+  const initialTasks = [
     {
       id: 1,
       title: "Donate Rs. 500 to the charity",
@@ -81,6 +81,68 @@ const Calendar = () => {
       ],
     },
   ];
+
+  const [tasks, setTasks] = useState(initialTasks);
+
+  // Handler for main task checkbox
+  const handleTaskChange = (taskId) => {
+    setTasks(prevTasks => 
+      prevTasks.map(task => {
+        if (task.id === taskId) {
+          // If task has subtasks, update all subtasks to match main task's new status
+          if (task.subtasks) {
+            const newCompleted = !task.completed;
+            return {
+              ...task,
+              completed: newCompleted,
+              subtasks: task.subtasks.map(subtask => ({
+                ...subtask,
+                completed: newCompleted
+              })),
+              progress: newCompleted 
+                ? `${task.subtasks.length}/${task.subtasks.length} Completed`
+                : "0/" + task.subtasks.length + " Completed"
+            };
+          }
+          // If task has no subtasks, simply toggle completed status
+          return {
+            ...task,
+            completed: !task.completed
+          };
+        }
+        return task;
+      })
+    );
+  };
+
+  // Handler for subtask checkbox
+  const handleSubtaskChange = (taskId, subtaskIndex) => {
+    setTasks(prevTasks =>
+      prevTasks.map(task => {
+        if (task.id === taskId) {
+          const newSubtasks = task.subtasks.map((subtask, index) =>
+            index === subtaskIndex
+              ? { ...subtask, completed: !subtask.completed }
+              : subtask
+          );
+          
+          // Count completed subtasks
+          const completedCount = newSubtasks.filter(st => st.completed).length;
+          
+          // Update main task status based on subtasks
+          const allCompleted = completedCount === newSubtasks.length;
+          
+          return {
+            ...task,
+            subtasks: newSubtasks,
+            completed: allCompleted,
+            progress: `${completedCount}/${newSubtasks.length} Completed`
+          };
+        }
+        return task;
+      })
+    );
+  };
 
   return (
     <div className="calendar-container">
@@ -146,7 +208,7 @@ const Calendar = () => {
                     <input
                       type="checkbox"
                       checked={task.completed}
-                      onChange={() => {}}
+                      onChange={() => handleTaskChange(task.id)}
                     />
                     <span className={task.completed ? "completed" : ""}>
                       {task.title}
@@ -177,7 +239,7 @@ const Calendar = () => {
                         <input
                           type="checkbox"
                           checked={subtask.completed}
-                          onChange={() => {}}
+                          onChange={() => handleSubtaskChange(task.id, index)}
                         />
                         <span className={subtask.completed ? "completed" : ""}>
                           {subtask.text}
