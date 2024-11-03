@@ -7,7 +7,6 @@
   border-radius: 16px;
 }
 
-/* Calendar Header */
 .calendar-header {
   display: flex;
   justify-content: space-between;
@@ -174,7 +173,7 @@
   max-height: 150px;
   font-size: 12px;
   border: solid 1px #e6e6e6;
-  position: relative; /* Add this to make it the positioning context */
+  position: relative;
 }
 
 .task-content {

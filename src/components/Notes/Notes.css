@@ -1,10 +1,9 @@
 /* Notes.css */
 .notes-container {
   width: 100%;
-  position: relative; /* Added for pseudo-element positioning */
+  position: relative; 
 }
 
-/* Add this new CSS for the divider */
 .notes-container::before {
   content: "";
   position: absolute;
@@ -12,10 +11,8 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: #e6e6e6; /* Light grey color for the divider */
+  background-color: #e6e6e6;
 }
-
-/* Rest of your CSS remains the same */
 
 .notes-header {
   display: flex;
@@ -149,7 +146,6 @@
   color: #787486;
 }
 
-/* Make the content fade out if it's too long */
 .note-content {
   display: -webkit-box;
   -webkit-line-clamp: 12;

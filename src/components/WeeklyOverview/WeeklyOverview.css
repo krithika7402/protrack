@@ -151,7 +151,6 @@
   position: relative;
 }
 
-/* Add this new CSS for the chart border */
 .chart-section::before {
   content: '';
   position: absolute;
